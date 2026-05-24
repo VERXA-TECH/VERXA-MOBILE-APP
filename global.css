@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@theme {
+  --color-primary-base: #c8e905;
+  --color-lemon-50: #fcfded;
+  --color-lemon-500: #d7ef47;
+  --color-text-strong: #ffffff;
+  --color-text-muted: #bebebe;
+  --color-holly-100: #c4cbc9;
+  --color-holly-400: #627570;
+  --color-holly-500: #415852;
+  --color-holly-600: #213b35;
+  --color-holly-700: #001e17;
+  --color-text-on-primary: #171717;
+  --color-text-soft-400: #a3a3a3;
+  --color-button-disabled-bg: #2c3308;
+  --color-indicator-inactive: #ffffff;
+  --color-glass-border: #315123;
+  --color-glass-bg: rgba(24, 38, 26, 0.77);
+  --color-radial-glow-start: #060e0a;
+  --color-radial-glow-end: #060c09;
+  --color-badge-text: #213b35;
+
+  --font-heuvel: HeuvelGrotesk;
+  --font-regesto: RegestoGrotesk;
+}

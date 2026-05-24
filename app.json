@@ -23,7 +23,11 @@
         "backgroundColor": "#000000"
       },
       "package": "io.verxa.app",
-      "permissions": ["USE_BIOMETRIC", "USE_FINGERPRINT", "CAMERA"]
+      "permissions": [
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "CAMERA"
+      ]
     },
     "plugins": [
       "expo-router",
@@ -45,7 +49,8 @@
         {
           "color": "#ffffff"
         }
-      ]
+      ],
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true
