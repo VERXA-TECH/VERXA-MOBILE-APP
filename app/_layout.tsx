@@ -1,13 +1,24 @@
 import '../global.css';
-import { Slot, Redirect } from 'expo-router';
-import { useAuthStore } from '../src/stores/auth.store';
+import { useEffect } from 'react';
+import { Slot } from 'expo-router';
+import * as SplashScreen from 'expo-splash-screen';
+
+import { useAppFonts } from '@/hooks/useAppFonts';
+
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const { user, kycStatus, isLoading } = useAuthStore();
+  const fontsLoaded = useAppFonts();
 
-  if (isLoading) return null;
-  if (!user) return <Redirect href="/(auth)/welcome" />;
-  if (kycStatus !== 'APPROVED') return <Redirect href="/(auth)/kyc/pending" />;
+  useEffect(() => {
+    if (fontsLoaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return <Slot />;
 }
