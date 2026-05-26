@@ -23,6 +23,7 @@
   --color-radial-glow-end: #060c09;
   --color-badge-text: #213b35;
 
-  --font-heuvel: HeuvelGrotesk;
-  --font-regesto: RegestoGrotesk;
+  --font-heuvel: HeuvelGrotesk-Medium;
+  --font-heuvel-regular: HeuvelGrotesk-Regular;
+  --font-inter: Inter_500Medium;
 }

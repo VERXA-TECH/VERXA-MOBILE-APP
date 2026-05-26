@@ -26,8 +26,8 @@ module.exports = {
         "badge-text": "var(--color-badge-text)",
       },
       fontFamily: {
-        heuvel: "var(--font-heuvel)",
-        regesto: "var(--font-regesto)",
+        heuvel: 'var(--font-heuvel)',
+        'heuvel-regular': 'var(--font-heuvel-regular)',
       },
     },
   },

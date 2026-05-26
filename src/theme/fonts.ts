@@ -1,17 +1,11 @@
+/** Loaded font family names — must match keys passed to `useFonts`. */
 export const fonts = {
-  heuvelGrotesk: 'HeuvelGrotesk',
-  regestoGrotesk: 'RegestoGrotesk',
-  inter: 'Inter',
+  heuvelGrotesk: 'HeuvelGrotesk-Medium',
+  heuvelGroteskRegular: 'HeuvelGrotesk-Regular',
+  inter: 'Inter_500Medium',
 } as const;
 
-/**
- * Font assets for expo-font.
- *
- * Add files under assets/fonts/, then uncomment the entries below:
- * - HeuvelGrotesk-Medium.otf
- * - RegestoGrotesk-Light.otf
- */
 export const fontAssets: Record<string, number> = {
-  // [fonts.heuvelGrotesk]: require('../../assets/fonts/HeuvelGrotesk-Medium.otf'),
-  // [fonts.regestoGrotesk]: require('../../assets/fonts/RegestoGrotesk-Light.otf'),
+  [fonts.heuvelGrotesk]: require('../../assets/fonts/HeuvelGrotesk-Medium.ttf'),
+  [fonts.heuvelGroteskRegular]: require('../../assets/fonts/HeuvelGrotesk-Regular.ttf'),
 };
