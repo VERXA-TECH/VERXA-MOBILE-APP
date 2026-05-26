@@ -47,7 +47,7 @@ export const onboardingSlides = {
       title: {
         fontFamily: fonts.heuvelGrotesk,
         fontSize: 10.713,
-        fontWeight: '500' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 14.284,
         letterSpacing: -0.161,
         color: colors.text.strong,
@@ -55,7 +55,7 @@ export const onboardingSlides = {
       currency: {
         fontFamily: fonts.heuvelGrotesk,
         fontSize: 10.713,
-        fontWeight: '500' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 14.284,
         letterSpacing: -0.161,
         color: colors.text.strong,
@@ -63,7 +63,7 @@ export const onboardingSlides = {
       wallet: {
         fontFamily: fonts.heuvelGrotesk,
         fontSize: 8.333,
-        fontWeight: '500' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 11.904,
         letterSpacing: -0.05,
         color: colors.text.soft400,
@@ -71,7 +71,7 @@ export const onboardingSlides = {
       amount: {
         fontFamily: fonts.heuvelGrotesk,
         fontSize: 10.713,
-        fontWeight: '500' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 14.284,
         letterSpacing: -0.161,
         color: colors.text.strong,
@@ -127,15 +127,15 @@ export const onboardingSlides = {
       title: {
         fontFamily: fonts.heuvelGrotesk,
         fontSize: 10.713,
-        fontWeight: '500' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 14.284,
         letterSpacing: -0.161,
         color: colors.text.strong,
       },
       rowLabel: {
-        fontFamily: fonts.regestoGrotesk,
+        fontFamily: fonts.heuvelGroteskRegular,
         fontSize: 9.494,
-        fontWeight: '400' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 14.24,
         letterSpacing: -0.104,
         color: colors.text.soft400,
@@ -143,7 +143,7 @@ export const onboardingSlides = {
       balance: {
         fontFamily: fonts.heuvelGrotesk,
         fontSize: 9.494,
-        fontWeight: '400' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 14.24,
         letterSpacing: -0.104,
         color: colors.text.soft400,
@@ -151,7 +151,7 @@ export const onboardingSlides = {
       sourceAmount: {
         fontFamily: fonts.heuvelGrotesk,
         fontSize: 23.734,
-        fontWeight: '500' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 28.481,
         letterSpacing: -0.237,
         color: colors.lemon[50],
@@ -159,7 +159,7 @@ export const onboardingSlides = {
       targetAmount: {
         fontFamily: fonts.heuvelGrotesk,
         fontSize: 23.734,
-        fontWeight: '500' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 28.481,
         letterSpacing: -0.237,
         color: colors.lemon[500],
@@ -167,7 +167,7 @@ export const onboardingSlides = {
       currencyCode: {
         fontFamily: fonts.inter,
         fontSize: 5.934,
-        fontWeight: '500' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 9.494,
         color: colors.text.strong,
         textTransform: 'uppercase' as const,
@@ -175,7 +175,7 @@ export const onboardingSlides = {
       rateLabel: {
         fontFamily: fonts.heuvelGrotesk,
         fontSize: 9.494,
-        fontWeight: '400' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 14.24,
         letterSpacing: -0.104,
         color: colors.text.soft400,
@@ -183,7 +183,7 @@ export const onboardingSlides = {
       rateValue: {
         fontFamily: fonts.heuvelGrotesk,
         fontSize: 9.494,
-        fontWeight: '400' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 14.24,
         letterSpacing: -0.104,
         color: colors.text.strong,
@@ -231,7 +231,7 @@ export const onboardingSlides = {
       primary: {
         fontFamily: fonts.heuvelGrotesk,
         fontSize: 10.713,
-        fontWeight: '500' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 14.284,
         letterSpacing: -0.161,
         color: colors.text.strong,
@@ -239,7 +239,7 @@ export const onboardingSlides = {
       secondary: {
         fontFamily: fonts.heuvelGrotesk,
         fontSize: 8.333,
-        fontWeight: '500' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 11.904,
         letterSpacing: -0.05,
         color: colors.text.soft400,
@@ -247,7 +247,7 @@ export const onboardingSlides = {
       tag: {
         fontFamily: fonts.heuvelGrotesk,
         fontSize: 10.713,
-        fontWeight: '500' as const,
+        fontWeight: 'normal' as const,
         lineHeight: 14.284,
         letterSpacing: -0.161,
         color: colors.lemon[500],
