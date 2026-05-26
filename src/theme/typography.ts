@@ -3,6 +3,23 @@ import { fonts } from './fonts';
 
 /** Reusable text presets for React Native `<Text style={…} />`. */
 export const typography = {
+  title: {
+    h5: {
+      fontFamily: fonts.heuvelGrotesk,
+      fontSize: 24,
+      fontWeight: 'normal' as const,
+      lineHeight: 32,
+      color: colors.text.strong,
+    },
+    landingH5: {
+      fontFamily: fonts.heuvelGrotesk,
+      fontSize: 24,
+      fontWeight: 'normal' as const,
+      lineHeight: 32,
+      letterSpacing: -0.12,
+      color: colors.text.strong,
+    },
+  },
   headline: {
     fontFamily: fonts.heuvelGrotesk,
     fontSize: 32,
@@ -60,6 +77,45 @@ export const typography = {
       lineHeight: 20,
       letterSpacing: -0.084,
       color: colors.text.muted,
+    },
+    input: {
+      fontFamily: fonts.heuvelGroteskRegular,
+      fontSize: 14,
+      fontWeight: 'normal' as const,
+      lineHeight: 20,
+      letterSpacing: -0.084,
+      color: colors.text.strong,
+    },
+    placeholder: {
+      fontFamily: fonts.heuvelGroteskRegular,
+      fontSize: 14,
+      fontWeight: 'normal' as const,
+      lineHeight: 20,
+      letterSpacing: -0.084,
+      color: colors.text.placeholder,
+    },
+    link: {
+      fontFamily: fonts.heuvelGroteskRegular,
+      fontSize: 14,
+      fontWeight: 'normal' as const,
+      lineHeight: 20,
+      letterSpacing: -0.084,
+      color: colors.lemon[600],
+    },
+    error: {
+      fontFamily: fonts.heuvelGroteskRegular,
+      fontSize: 14,
+      fontWeight: 'normal' as const,
+      lineHeight: 20,
+      letterSpacing: -0.084,
+      color: colors.state.error,
+    },
+    xSmall: {
+      fontFamily: fonts.heuvelGroteskRegular,
+      fontSize: 12,
+      fontWeight: 'normal' as const,
+      lineHeight: 16,
+      color: colors.text.soft400,
     },
   },
 } as const;
