@@ -3,18 +3,30 @@
 @tailwind utilities;
 
 @theme {
+  --color-background: #0b150e;
+  --color-bg-soft-200: #333333;
   --color-primary-base: #c8e905;
   --color-lemon-50: #fcfded;
   --color-lemon-500: #d7ef47;
+  --color-lemon-600: #cfec26;
   --color-text-strong: #ffffff;
   --color-text-muted: #bebebe;
+  --color-text-sub-600: #a3a3a3;
+  --color-text-soft-400: #7b7b7b;
+  --color-text-placeholder: #7b7b7b;
   --color-holly-100: #c4cbc9;
+  --color-holly-300: #83918e;
   --color-holly-400: #627570;
   --color-holly-500: #415852;
   --color-holly-600: #213b35;
   --color-holly-700: #001e17;
   --color-text-on-primary: #171717;
-  --color-text-soft-400: #a3a3a3;
+  --color-state-error: #e93544;
+  --color-state-warning: #e16614;
+  --color-state-success: #1daf61;
+  --color-input-bg: rgba(33, 59, 53, 0.18);
+  --color-input-digit-bg: rgba(33, 59, 53, 0.40);
+  --color-stroke-soft-200: #262626;
   --color-button-disabled-bg: #2c3308;
   --color-indicator-inactive: #ffffff;
   --color-glass-border: #315123;

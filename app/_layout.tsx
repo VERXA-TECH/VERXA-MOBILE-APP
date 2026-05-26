@@ -1,24 +1,24 @@
-import '../global.css';
-import { useEffect } from 'react';
-import { Slot } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
+import "../global.css"
+import { useEffect } from "react"
+import { Slot } from "expo-router"
+import * as SplashScreen from "expo-splash-screen"
 
-import { useAppFonts } from '@/hooks/useAppFonts';
+import { useAppFonts } from "@/hooks/useAppFonts"
 
-SplashScreen.preventAutoHideAsync();
+SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
-  const fontsLoaded = useAppFonts();
+  const fontsLoaded = useAppFonts()
 
   useEffect(() => {
     if (fontsLoaded) {
-      SplashScreen.hideAsync();
+      SplashScreen.hideAsync()
     }
-  }, [fontsLoaded]);
+  }, [fontsLoaded])
 
   if (!fontsLoaded) {
-    return null;
+    return null
   }
 
-  return <Slot />;
+  return <Slot />
 }
