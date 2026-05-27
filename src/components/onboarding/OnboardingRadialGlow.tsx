@@ -1,69 +1,65 @@
-import { LinearGradient } from 'expo-linear-gradient';
-import { StyleSheet, View } from 'react-native';
+import { Image } from 'expo-image';
+import { Dimensions, StyleSheet, View } from 'react-native';
 
-import { withAlpha } from '@/theme/colorUtils';
 import { onboarding } from '@/theme';
+
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 type GlowEdge = 'top' | 'bottom';
 
-type GlowLayerProps = {
+type GlowImageProps = {
   edge: GlowEdge;
 };
 
-/**
- * Single linear-gradient slab anchored to one edge of the screen. Stops are
- * pre-baked from tokens into rgba colors so the gradient reads as a smooth
- * dark-to-transparent (top) or transparent-to-dark (bottom) fade.
- */
-function GlowLayer({ edge }: GlowLayerProps) {
-  const config = onboarding.radialGlow[edge];
-  const baseColor = onboarding.radialGlow.baseColor;
-
-  // expo-linear-gradient typings expect at least two color stops as a tuple.
-  const colors = config.stops.map((stop) => withAlpha(baseColor, stop.opacity)) as [
-    string,
-    string,
-    ...string[],
-  ];
-  const locations = config.stops.map((stop) => stop.offset) as [number, number, ...number[]];
+function GlowImage({ edge }: GlowImageProps) {
+  const width = SCREEN_WIDTH * onboarding.radialGlow[edge].widthRatio;
+  const height =
+    width *
+    (onboarding.radialGlow[edge].assetHeight /
+      onboarding.radialGlow[edge].assetWidth);
+  const isTop = edge === 'top';
 
   return (
-    <LinearGradient
-      pointerEvents="none"
-      colors={colors}
-      locations={locations}
-      // Pure vertical fade — the source design's radial spans far wider than
-      // any phone, so it collapses to a directional gradient at device scale.
-      start={{ x: 0.5, y: 0 }}
-      end={{ x: 0.5, y: 1 }}
+    <Image
+      source={
+        isTop
+          ? require('../../../assets/onboarding/radial-glow-top.png')
+          : require('../../../assets/onboarding/radial-glow-bottom.png')
+      }
       style={[
-        styles.layer,
-        edge === 'top' ? styles.top : styles.bottom,
-        { height: `${config.coveragePct}%` },
+        styles.glow,
+        isTop
+          ? {
+              width,
+              height,
+              top: onboarding.radialGlow.top.offsetTop,
+            }
+          : {
+              width,
+              height,
+              bottom: onboarding.radialGlow.bottom.offsetBottom,
+            },
       ]}
+      contentFit="cover"
+      contentPosition={isTop ? 'top' : 'bottom'}
+      pointerEvents="none"
     />
   );
 }
 
+/** Figma ellipse exports — top (666) and bottom (667) radial glow overlays. */
 export function OnboardingRadialGlow() {
   return (
     <View pointerEvents="none" style={StyleSheet.absoluteFill}>
-      <GlowLayer edge="top" />
-      <GlowLayer edge="bottom" />
+      <GlowImage edge="top" />
+      <GlowImage edge="bottom" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  layer: {
+  glow: {
     position: 'absolute',
     left: 0,
-    right: 0,
-  },
-  top: {
-    top: 0,
-  },
-  bottom: {
-    bottom: 0,
   },
 });

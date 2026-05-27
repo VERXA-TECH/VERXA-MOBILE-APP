@@ -4,4 +4,6 @@ export { typography } from './typography';
 export { button } from './button';
 export { input } from './input';
 export { onboarding, onboardingShared, onboardingSlides } from './onboarding';
+export { home, homeShared } from './home';
+export { tabBar, tabBarShared } from './tabBar';
 export { withAlpha } from './colorUtils';

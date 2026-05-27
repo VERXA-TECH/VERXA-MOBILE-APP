@@ -15,6 +15,7 @@ import { SafeAreaView } from "react-native-safe-area-context"
 import EyeIcon from "../../assets/eye-line.svg"
 import { Button } from "@/components/ui/Button"
 import { TextField } from "@/components/ui/TextField"
+import { appRoutes } from "@/constants/appRoutes"
 import { authRoutes } from "@/constants/authRoutes"
 import { colors, typography } from "@/theme"
 
@@ -37,6 +38,7 @@ export default function LoginScreen() {
     setIsSubmitting(true)
 
     // TODO: wire up auth API — setPasswordError(LOGIN_ERROR) on failure
+    router.replace(appRoutes.home)
     setIsSubmitting(false)
   }
 
