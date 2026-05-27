@@ -3,6 +3,7 @@ export const fonts = {
   heuvelGrotesk: 'HeuvelGrotesk-Medium',
   heuvelGroteskRegular: 'HeuvelGrotesk-Regular',
   inter: 'Inter_500Medium',
+  interRegular: 'Inter_400Regular',
 } as const;
 
 export const fontAssets: Record<string, number> = {

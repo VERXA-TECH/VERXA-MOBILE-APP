@@ -18,8 +18,13 @@ export const colors = {
     soft400: "#A3A3A3",
     placeholder: "#7B7B7B",
     onPrimary: "#171717",
+    welcome: "#D1D1D1",
+  },
+  green: {
+    950: "#0B4627",
   },
   holly: {
+    50: "#E5E8E7",
     100: "#C4CBC9",
     300: "#83918E",
     400: "#627570",
@@ -38,6 +43,7 @@ export const colors = {
     error: "#E93544",
     warning: "#E16614",
     success: "#1DAF61",
+    successLighter: "rgba(31, 193, 107, 0.10)",
   },
   indicator: {
     inactive: "#FFFFFF",
@@ -66,5 +72,12 @@ export const colors = {
   button: {
     disabledBackground: "#2C3308",
     disabledText: "#A3A3A3",
+  },
+  portfolio: {
+    border: "#5F6F00",
+    background: "rgba(18, 17, 17, 0.20)",
+  },
+  currency: {
+    dropdownBackground: "rgba(252, 253, 237, 0.10)",
   },
 } as const
