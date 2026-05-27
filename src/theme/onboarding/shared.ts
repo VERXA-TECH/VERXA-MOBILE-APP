@@ -1,6 +1,6 @@
 import { colors } from '../colors';
 
-/** Shared onboarding shell — progress, glow, glass defaults, footer insets. */
+/** Shared onboarding shell — progress, glow assets, glass defaults, footer insets. */
 export const onboardingShared = {
   progress: {
     height: 2,
@@ -10,24 +10,19 @@ export const onboardingShared = {
     totalSteps: 4,
   },
   radialGlow: {
-    baseColor: colors.radialGlow.start,
+    /** Figma Ellipse 666 — top radial gradient export (430×380). */
     top: {
-      coveragePct: 45,
-      stops: [
-        { offset: 0, opacity: 1 },
-        { offset: 0.35, opacity: 0.78 },
-        { offset: 0.65, opacity: 0.36 },
-        { offset: 1, opacity: 0 },
-      ],
+      assetWidth: 430,
+      assetHeight: 380,
+      widthRatio: 1,
+      offsetTop: 0,
     },
+    /** Figma Ellipse 667 — bottom radial gradient export (430×317). */
     bottom: {
-      coveragePct: 42,
-      stops: [
-        { offset: 0, opacity: 0 },
-        { offset: 0.35, opacity: 0.36 },
-        { offset: 0.65, opacity: 0.78 },
-        { offset: 1, opacity: 1 },
-      ],
+      assetWidth: 430,
+      assetHeight: 317,
+      widthRatio: 1,
+      offsetBottom: 0,
     },
   },
   glassCard: {

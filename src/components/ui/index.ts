@@ -1,5 +1,6 @@
 export { Button } from "./Button"
 export type { ButtonSize, ButtonVariant } from "./Button"
+export { EmptyStateCard } from "./EmptyStateCard"
 export { TextField } from "./TextField"
 export { DigitInput } from "./DigitInput"
 export { PasswordStrengthBars } from "./PasswordStrengthBars"
