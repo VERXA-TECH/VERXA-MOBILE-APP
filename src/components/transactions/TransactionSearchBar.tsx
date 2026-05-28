@@ -1,20 +1,20 @@
-import { Pressable, StyleSheet, TextInput, View } from 'react-native';
+import { Pressable, StyleSheet, TextInput, View } from "react-native"
 
-import SearchIcon from '../../../assets/home/search-line.svg';
-import { colors, transactions, typography } from '@/theme';
+import SearchIcon from "../../../assets/home/search-line.svg"
+import { colors, transactions, typography } from "@/theme"
 
 type TransactionSearchBarProps = {
-  value?: string;
-  onChangeText?: (text: string) => void;
-  placeholder?: string;
-};
+  value?: string
+  onChangeText?: (text: string) => void
+  placeholder?: string
+}
 
 export function TransactionSearchBar({
   value,
   onChangeText,
-  placeholder = 'Search transactions...',
+  placeholder = "Search transactions...",
 }: TransactionSearchBarProps) {
-  const config = transactions.search;
+  const config = transactions.search
 
   return (
     <View style={styles.container}>
@@ -32,18 +32,18 @@ export function TransactionSearchBar({
         style={styles.input}
       />
     </View>
-  );
+  )
 }
 
-const config = transactions.search;
+const config = transactions.search
 
 const styles = StyleSheet.create({
   container: {
     height: config.height,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: config.gap,
-    alignSelf: 'stretch',
+    alignSelf: "stretch",
     borderRadius: config.borderRadius,
     borderWidth: 1,
     borderColor: config.borderColor,
@@ -64,4 +64,4 @@ const styles = StyleSheet.create({
     letterSpacing: typography.paragraph.input.letterSpacing,
     color: typography.paragraph.input.color,
   },
-});
+})

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import ArrowRightDownIcon from '../../../assets/home/arrow-right-down-line.svg';
 import ArrowRightLongIcon from '../../../assets/home/arrow-right-long-line.svg';
@@ -6,10 +6,10 @@ import BankCardIcon from '../../../assets/home/bank-card-line.svg';
 import ExchangeIcon from '../../../assets/home/exchange-line.svg';
 import ReceivedArrowIcon from '../../../assets/home/transaction-arrow-received.svg';
 import SentArrowIcon from '../../../assets/home/transaction-arrow-sent.svg';
-import { home, colors } from '@/theme';
+import { home } from '@/theme';
 import { formatNairaCompact, formatUsdCompact, formatUsdtCompact } from '@/utils/currency';
 
-import { StatusDot } from '../transactions/StatusDot';
+import { TransactionStatusBadge } from '../transactions/TransactionStatusBadge';
 
 export type TransactionDirection = 'sent' | 'received';
 
@@ -40,6 +40,7 @@ export type TransactionItem = {
 type TransactionRowProps = {
   transaction: TransactionItem;
   showStatusDot?: boolean;
+  onPress?: () => void;
 };
 
 function formatTransactionAmount(transaction: TransactionItem): string {
@@ -120,17 +121,12 @@ function TransactionIcon({
 export function TransactionRow({
   transaction,
   showStatusDot = false,
+  onPress,
 }: TransactionRowProps) {
   const config = home.recentTransactions.row;
   const statusType = transaction.statusType ?? 'completed';
-  const badgeStyles =
-    statusType === 'failed' ? styles.badgeFailed : styles.badgeCompleted;
-  const badgeTextStyles =
-    statusType === 'failed'
-      ? styles.badgeTextFailed
-      : styles.badgeTextCompleted;
 
-  return (
+  const content = (
     <View style={styles.row}>
       <View style={styles.left}>
         <View style={styles.iconBox}>
@@ -148,14 +144,23 @@ export function TransactionRow({
           {formatTransactionAmount(transaction)}
         </Text>
 
-        <View style={[styles.badge, badgeStyles, showStatusDot && styles.badgeWithDot]}>
-          {showStatusDot ? <StatusDot variant={statusType} /> : null}
-          <Text style={[styles.badgeText, badgeTextStyles]}>
-            {transaction.status}
-          </Text>
-        </View>
+        <TransactionStatusBadge
+          status={transaction.status}
+          statusType={statusType}
+          showDot={showStatusDot}
+        />
       </View>
     </View>
+  );
+
+  if (!onPress) {
+    return content;
+  }
+
+  return (
+    <Pressable accessibilityRole="button" onPress={onPress}>
+      {content}
+    </Pressable>
   );
 }
 
@@ -193,34 +198,4 @@ const styles = StyleSheet.create({
     gap: config.textGap,
   },
   amount: config.amount,
-  badge: {
-    paddingVertical: config.badge.paddingVertical,
-    paddingHorizontal: config.badge.paddingHorizontal,
-    borderRadius: config.badge.borderRadius,
-    alignSelf: 'stretch',
-    alignItems: 'center',
-  },
-  badgeWithDot: {
-    flexDirection: 'row',
-    alignSelf: 'flex-end',
-    gap: 4,
-  },
-  badgeCompleted: {
-    backgroundColor: config.badge.backgroundColor,
-  },
-  badgeFailed: {
-    backgroundColor: colors.state.errorLighter,
-  },
-  badgeText: {
-    fontFamily: config.badge.fontFamily,
-    fontSize: config.badge.fontSize,
-    lineHeight: config.badge.lineHeight,
-    textAlign: 'center',
-  },
-  badgeTextCompleted: {
-    color: config.badge.textColor,
-  },
-  badgeTextFailed: {
-    color: colors.state.error,
-  },
 });

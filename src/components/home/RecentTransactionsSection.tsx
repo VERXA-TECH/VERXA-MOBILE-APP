@@ -1,7 +1,9 @@
 import { Fragment } from "react"
 import { Pressable, StyleSheet, Text, View } from "react-native"
+import { useRouter } from "expo-router"
 
 import { EmptyStateCard } from "@/components/ui/EmptyStateCard"
+import { transactionDetailRoute } from "@/constants/appRoutes"
 import { home } from "@/theme"
 
 import { TransactionRow, type TransactionItem } from "./TransactionRow"
@@ -36,6 +38,7 @@ export function RecentTransactionsSection({
   onSeeAllPress,
   onEmptyActionPress,
 }: RecentTransactionsSectionProps) {
+  const router = useRouter()
   const config = home.recentTransactions
   const hasTransactions = transactions.length > 0
 
@@ -59,7 +62,10 @@ export function RecentTransactionsSection({
         <View style={styles.listCard}>
           {transactions.map((transaction, index) => (
             <Fragment key={transaction.id}>
-              <TransactionRow transaction={transaction} />
+              <TransactionRow
+                transaction={transaction}
+                onPress={() => router.push(transactionDetailRoute(transaction.id))}
+              />
 
               {index < transactions.length - 1 ? (
                 <View style={styles.divider} />

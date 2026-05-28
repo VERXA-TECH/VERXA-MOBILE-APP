@@ -12,6 +12,7 @@ import {
   RecentTransactionsSection,
 } from "@/components/home/RecentTransactionsSection"
 import { home } from "@/theme"
+import { appRoutes, transactionDetailRoute } from "@/constants/appRoutes"
 
 /** Toggle to preview the funded portfolio card state in the UI. */
 const PREVIEW_FUNDED_STATE = true
@@ -44,7 +45,7 @@ export default function HomeScreen() {
 
         <RecentTransactionsSection
           transactions={transactions}
-          onSeeAllPress={() => router.push("/(app)/transactions")}
+          onSeeAllPress={() => router.push(appRoutes.transactions)}
         />
       </ScrollView>
     </HomeScreenShell>

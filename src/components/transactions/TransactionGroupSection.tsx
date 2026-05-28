@@ -1,10 +1,12 @@
 import { Fragment } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { useRouter } from 'expo-router';
 
 import {
   TransactionRow,
   type TransactionItem,
 } from '@/components/home/TransactionRow';
+import { transactionDetailRoute } from '@/constants/appRoutes';
 import { transactions } from '@/theme';
 
 export type TransactionGroup = {
@@ -17,6 +19,7 @@ type TransactionGroupSectionProps = {
 };
 
 export function TransactionGroupSection({ group }: TransactionGroupSectionProps) {
+  const router = useRouter();
   const { transactions: items } = group;
 
   return (
@@ -26,7 +29,11 @@ export function TransactionGroupSection({ group }: TransactionGroupSectionProps)
       <View style={styles.listCard}>
         {items.map((transaction, index) => (
           <Fragment key={transaction.id}>
-            <TransactionRow transaction={transaction} showStatusDot />
+            <TransactionRow
+              transaction={transaction}
+              showStatusDot
+              onPress={() => router.push(transactionDetailRoute(transaction.id))}
+            />
 
             {index < items.length - 1 ? (
               <View style={styles.divider} />
