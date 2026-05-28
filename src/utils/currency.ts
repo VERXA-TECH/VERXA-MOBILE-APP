@@ -10,3 +10,15 @@ export function formatNairaCompact(amount: number): string {
     maximumFractionDigits: 0,
   })}`;
 }
+
+export function formatUsdCompact(amount: number): string {
+  return `$${amount.toLocaleString('en-US', {
+    maximumFractionDigits: 0,
+  })}`;
+}
+
+export function formatUsdtCompact(amount: number): string {
+  return `${amount.toLocaleString('en-US', {
+    maximumFractionDigits: 0,
+  })} USDT`;
+}

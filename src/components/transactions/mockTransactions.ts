@@ -1,0 +1,105 @@
+import type { TransactionGroup } from '@/components/transactions/TransactionGroupSection';
+import type { TransactionItem } from '@/components/home/TransactionRow';
+
+export const MOCK_TRANSACTION_GROUPS: TransactionGroup[] = [
+  {
+    label: 'Today · 26 Apr',
+    transactions: [
+      {
+        id: 'tx-1',
+        title: 'Transfer to Ademola Jones',
+        date: 'Today, 09:20AM',
+        amount: 480_600,
+        direction: 'sent',
+        status: 'Completed',
+        statusType: 'completed',
+        iconType: 'sent',
+      },
+      {
+        id: 'tx-2',
+        title: 'Transfer to Ademola Jones',
+        date: 'Today, 09:20AM',
+        amount: 480_600,
+        direction: 'sent',
+        status: 'Failed',
+        statusType: 'failed',
+        iconType: 'sent',
+      },
+      {
+        id: 'tx-3',
+        title: 'Exchanged USD to NGN',
+        date: 'Today, 09:20AM',
+        amount: 80_000,
+        direction: 'sent',
+        status: 'Completed',
+        statusType: 'completed',
+        iconType: 'exchange',
+        currency: 'USD',
+      },
+      {
+        id: 'tx-4',
+        title: 'Airtime Purchase',
+        date: 'Today, 09:20AM',
+        amount: 480_600,
+        direction: 'sent',
+        status: 'Completed',
+        statusType: 'completed',
+        iconType: 'card',
+      },
+      {
+        id: 'tx-4b',
+        title: 'Transfer to UK',
+        date: 'Today, 11:45AM',
+        amount: 320_000,
+        direction: 'sent',
+        status: 'Completed',
+        statusType: 'completed',
+        iconType: 'transferUk',
+      },
+      {
+        id: 'tx-4c',
+        title: 'USDT received',
+        date: 'Today, 02:15PM',
+        amount: 500,
+        direction: 'received',
+        status: 'Completed',
+        statusType: 'completed',
+        iconType: 'usdtReceived',
+        currency: 'USDT',
+      },
+    ],
+  },
+  {
+    label: 'Yesterday · 25 Apr',
+    transactions: [
+      {
+        id: 'tx-5',
+        title: 'Received from Sarah Ade',
+        date: 'Yesterday, 06:30PM',
+        amount: 250_000,
+        direction: 'received',
+        status: 'Completed',
+        statusType: 'completed',
+        iconType: 'received',
+      },
+    ],
+  },
+  {
+    label: '23 Apr',
+    transactions: [
+      {
+        id: 'tx-6',
+        title: 'Received from Sarah Ade',
+        date: '23 Apr, 06:30PM',
+        amount: 250_000,
+        direction: 'received',
+        status: 'Completed',
+        statusType: 'completed',
+        iconType: 'received',
+      },
+    ],
+  },
+];
+
+export const MOCK_ALL_TRANSACTIONS: TransactionItem[] =
+  MOCK_TRANSACTION_GROUPS.flatMap((group) => group.transactions);

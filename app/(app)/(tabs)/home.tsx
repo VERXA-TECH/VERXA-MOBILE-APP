@@ -1,4 +1,5 @@
 import { ScrollView, StyleSheet } from "react-native"
+import { useRouter } from "expo-router"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 
 import { HomeHeader } from "@/components/home/HomeHeader"
@@ -19,6 +20,7 @@ const PREVIEW_FUNDED_STATE = true
 const PREVIEW_TRANSACTIONS = true
 
 export default function HomeScreen() {
+  const router = useRouter()
   const insets = useSafeAreaInsets()
   const balance = PREVIEW_FUNDED_STATE ? 120_000 : 0
   const transactions = PREVIEW_TRANSACTIONS ? MOCK_TRANSACTIONS : []
@@ -40,7 +42,10 @@ export default function HomeScreen() {
 
         <HomeReferralCarousel />
 
-        <RecentTransactionsSection transactions={transactions} />
+        <RecentTransactionsSection
+          transactions={transactions}
+          onSeeAllPress={() => router.push("/(app)/transactions")}
+        />
       </ScrollView>
     </HomeScreenShell>
   )

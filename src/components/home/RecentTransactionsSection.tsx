@@ -1,43 +1,43 @@
-import { Fragment } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Fragment } from "react"
+import { Pressable, StyleSheet, Text, View } from "react-native"
 
-import { EmptyStateCard } from '@/components/ui/EmptyStateCard';
-import { home } from '@/theme';
+import { EmptyStateCard } from "@/components/ui/EmptyStateCard"
+import { home } from "@/theme"
 
-import { TransactionRow, type TransactionItem } from './TransactionRow';
+import { TransactionRow, type TransactionItem } from "./TransactionRow"
 
 const MOCK_TRANSACTIONS: TransactionItem[] = [
   {
-    id: 'tx-1',
-    title: 'Transfer to Ademola Jones',
-    date: 'Today, 09:20AM',
+    id: "tx-1",
+    title: "Transfer to Ademola Jones",
+    date: "Today, 09:20AM",
     amount: 480_600,
-    direction: 'sent',
-    status: 'Completed',
+    direction: "sent",
+    status: "Completed",
   },
   {
-    id: 'tx-2',
-    title: 'Received from Sarah Ade',
-    date: 'Yesterday, 06:30PM',
+    id: "tx-2",
+    title: "Received from Sarah Ade",
+    date: "Yesterday, 06:30PM",
     amount: 250_000,
-    direction: 'received',
-    status: 'Completed',
+    direction: "received",
+    status: "Completed",
   },
-];
+]
 
 type RecentTransactionsSectionProps = {
-  transactions?: TransactionItem[];
-  onSeeAllPress?: () => void;
-  onEmptyActionPress?: () => void;
-};
+  transactions?: TransactionItem[]
+  onSeeAllPress?: () => void
+  onEmptyActionPress?: () => void
+}
 
 export function RecentTransactionsSection({
   transactions = [],
   onSeeAllPress,
   onEmptyActionPress,
 }: RecentTransactionsSectionProps) {
-  const config = home.recentTransactions;
-  const hasTransactions = transactions.length > 0;
+  const config = home.recentTransactions
+  const hasTransactions = transactions.length > 0
 
   return (
     <View style={styles.section}>
@@ -70,7 +70,7 @@ export function RecentTransactionsSection({
       ) : (
         <View style={styles.emptyCard}>
           <EmptyStateCard
-            image={require('../../../assets/home/empty-wallet.png')}
+            image={require("../../../assets/home/empty-wallet.png")}
             imageSize={config.empty.walletSize}
             title="No transactions yet"
             description="You haven't made any transactions yet. Start by adding funds to send and exchange money effortlessly."
@@ -82,24 +82,24 @@ export function RecentTransactionsSection({
         </View>
       )}
     </View>
-  );
+  )
 }
 
-export { MOCK_TRANSACTIONS };
+export { MOCK_TRANSACTIONS }
 
-const config = home.recentTransactions;
+const config = home.recentTransactions
 
 const styles = StyleSheet.create({
   section: {
     marginTop: config.marginTop,
-    alignSelf: 'stretch',
+    alignSelf: "stretch",
     gap: config.headerGap,
   },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    alignSelf: 'stretch',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    alignSelf: "stretch",
   },
   title: config.title,
   seeAll: config.seeAll,
@@ -122,6 +122,6 @@ const styles = StyleSheet.create({
   divider: {
     height: config.divider.height,
     backgroundColor: config.divider.backgroundColor,
-    alignSelf: 'stretch',
+    alignSelf: "stretch",
   },
-});
+})

@@ -11,6 +11,7 @@ export default function AppLayout() {
       }}
     >
       <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="transactions" options={{ presentation: 'card' }} />
       <Stack.Screen name="wallet/[id]" options={{ presentation: 'card' }} />
       <Stack.Screen name="transaction/[id]" options={{ presentation: 'card' }} />
     </Stack>

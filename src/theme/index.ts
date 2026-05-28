@@ -6,4 +6,5 @@ export { input } from './input';
 export { onboarding, onboardingShared, onboardingSlides } from './onboarding';
 export { home, homeShared } from './home';
 export { tabBar, tabBarShared } from './tabBar';
+export { transactions, transactionsShared } from './transactions';
 export { withAlpha } from './colorUtils';
