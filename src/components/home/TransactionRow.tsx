@@ -13,8 +13,6 @@ import { TransactionStatusBadge } from '../transactions/TransactionStatusBadge';
 
 export type TransactionDirection = 'sent' | 'received';
 
-export type TransactionStatusType = 'completed' | 'failed';
-
 export type TransactionIconType =
   | 'sent'
   | 'received'
@@ -22,6 +20,26 @@ export type TransactionIconType =
   | 'card'
   | 'transferUk'
   | 'usdtReceived';
+
+export type TransactionStatusType = 'completed' | 'failed' | 'pending';
+
+export type TransactionFilterType =
+  | 'sent'
+  | 'received'
+  | 'converted'
+  | 'bills'
+  | 'withdrawn';
+
+export type TransactionWallet =
+  | 'NGN'
+  | 'GBP'
+  | 'CAD'
+  | 'GHS'
+  | 'ZAR'
+  | 'BTC'
+  | 'ETH'
+  | 'USDC'
+  | 'USDT';
 
 export type TransactionCurrency = 'NGN' | 'USD' | 'USDT';
 
@@ -35,6 +53,8 @@ export type TransactionItem = {
   statusType?: TransactionStatusType;
   iconType?: TransactionIconType;
   currency?: TransactionCurrency;
+  filterType?: TransactionFilterType;
+  wallet?: TransactionWallet;
 };
 
 type TransactionRowProps = {

@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native';
 
+import type { TransactionStatusType } from '@/components/home/TransactionRow';
 import { home, colors } from '@/theme';
 
 import { StatusDot } from './StatusDot';
 
 type TransactionStatusBadgeProps = {
   status: string;
-  statusType?: 'completed' | 'failed';
+  statusType?: TransactionStatusType;
   showDot?: boolean;
 };
 
@@ -16,13 +17,22 @@ export function TransactionStatusBadge({
   showDot = true,
 }: TransactionStatusBadgeProps) {
   const config = home.recentTransactions.row.badge;
-  const isFailed = statusType === 'failed';
+  const badgeVariant =
+    statusType === 'failed'
+      ? 'failed'
+      : statusType === 'pending'
+        ? 'pending'
+        : 'completed';
 
   return (
     <View
       style={[
         styles.badge,
-        isFailed ? styles.badgeFailed : styles.badgeCompleted,
+        badgeVariant === 'failed'
+          ? styles.badgeFailed
+          : badgeVariant === 'pending'
+            ? styles.badgePending
+            : styles.badgeCompleted,
         showDot && styles.badgeWithDot,
       ]}
     >
@@ -30,7 +40,11 @@ export function TransactionStatusBadge({
       <Text
         style={[
           styles.badgeText,
-          isFailed ? styles.badgeTextFailed : styles.badgeTextCompleted,
+          badgeVariant === 'failed'
+            ? styles.badgeTextFailed
+            : badgeVariant === 'pending'
+              ? styles.badgeTextPending
+              : styles.badgeTextCompleted,
         ]}
       >
         {status}
@@ -58,6 +72,9 @@ const styles = StyleSheet.create({
   badgeFailed: {
     backgroundColor: colors.state.errorLighter,
   },
+  badgePending: {
+    backgroundColor: 'rgba(225, 102, 20, 0.10)',
+  },
   badgeText: {
     fontFamily: config.fontFamily,
     fontSize: config.fontSize,
@@ -69,5 +86,8 @@ const styles = StyleSheet.create({
   },
   badgeTextFailed: {
     color: colors.state.error,
+  },
+  badgeTextPending: {
+    color: colors.state.warning,
   },
 });
