@@ -1,29 +1,29 @@
 import { StyleSheet, View } from "react-native"
 
-import type { TransactionStatusType } from '@/components/home/TransactionRow';
-import { transactions, colors } from '@/theme';
+import type { TransactionStatusType } from "@/components/home/TransactionRow"
+import { transactions, colors } from "@/theme"
 
 type StatusDotProps = {
-  variant: TransactionStatusType;
-};
+  variant: TransactionStatusType
+}
 
 function getDotColor(variant: TransactionStatusType) {
-  const config = transactions.statusDot;
+  const config = transactions.statusDot
 
-  if (variant === 'failed') {
-    return config.failedColor;
+  if (variant === "failed") {
+    return config.failedColor
   }
 
-  if (variant === 'pending') {
-    return colors.state.warning;
+  if (variant === "pending") {
+    return colors.state.warning
   }
 
-  return config.completedColor;
+  return config.completedColor
 }
 
 export function StatusDot({ variant }: StatusDotProps) {
-  const config = transactions.statusDot;
-  const color = getDotColor(variant);
+  const config = transactions.statusDot
+  const color = getDotColor(variant)
 
   return (
     <View

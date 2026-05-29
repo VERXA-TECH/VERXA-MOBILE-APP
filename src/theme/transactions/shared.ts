@@ -1,8 +1,8 @@
-import { colors } from '../colors';
-import { fonts } from '../fonts';
-import { homeShared } from '../home/shared';
-import { input } from '../input';
-import { typography } from '../typography';
+import { colors } from "../colors"
+import { fonts } from "../fonts"
+import { homeShared } from "../home/shared"
+import { input } from "../input"
+import { typography } from "../typography"
 
 /** Transactions list screen — header, search, and grouped list tokens. */
 export const transactionsShared = {
@@ -111,7 +111,7 @@ export const transactionsShared = {
     },
     card: {
       borderRadius: 12,
-      backgroundColor: 'rgba(33, 59, 53, 0.40)',
+      backgroundColor: "rgba(33, 59, 53, 0.40)",
       paddingVertical: 24,
       paddingHorizontal: 12,
       gap: 18,
@@ -146,8 +146,8 @@ export const transactionsShared = {
     },
   },
   filter: {
-    backgroundColor: '#14241E',
-    overlayColor: 'rgba(0, 0, 0, 0.55)',
+    backgroundColor: "#14241E",
+    overlayColor: "rgba(0, 0, 0, 0.55)",
     borderRadius: 24,
     paddingVertical: 26,
     paddingHorizontal: 19,
@@ -209,4 +209,4 @@ export const transactionsShared = {
       },
     },
   },
-} as const;
+} as const

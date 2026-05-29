@@ -1,36 +1,36 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from "react-native"
 
-import type { TransactionStatusType } from '@/components/home/TransactionRow';
-import { home, colors } from '@/theme';
+import type { TransactionStatusType } from "@/components/home/TransactionRow"
+import { home, colors } from "@/theme"
 
-import { StatusDot } from './StatusDot';
+import { StatusDot } from "./StatusDot"
 
 type TransactionStatusBadgeProps = {
-  status: string;
-  statusType?: TransactionStatusType;
-  showDot?: boolean;
-};
+  status: string
+  statusType?: TransactionStatusType
+  showDot?: boolean
+}
 
 export function TransactionStatusBadge({
   status,
-  statusType = 'completed',
+  statusType = "completed",
   showDot = true,
 }: TransactionStatusBadgeProps) {
-  const config = home.recentTransactions.row.badge;
+  const config = home.recentTransactions.row.badge
   const badgeVariant =
-    statusType === 'failed'
-      ? 'failed'
-      : statusType === 'pending'
-        ? 'pending'
-        : 'completed';
+    statusType === "failed"
+      ? "failed"
+      : statusType === "pending"
+        ? "pending"
+        : "completed"
 
   return (
     <View
       style={[
         styles.badge,
-        badgeVariant === 'failed'
+        badgeVariant === "failed"
           ? styles.badgeFailed
-          : badgeVariant === 'pending'
+          : badgeVariant === "pending"
             ? styles.badgePending
             : styles.badgeCompleted,
         showDot && styles.badgeWithDot,
@@ -40,9 +40,9 @@ export function TransactionStatusBadge({
       <Text
         style={[
           styles.badgeText,
-          badgeVariant === 'failed'
+          badgeVariant === "failed"
             ? styles.badgeTextFailed
-            : badgeVariant === 'pending'
+            : badgeVariant === "pending"
               ? styles.badgeTextPending
               : styles.badgeTextCompleted,
         ]}
@@ -50,20 +50,20 @@ export function TransactionStatusBadge({
         {status}
       </Text>
     </View>
-  );
+  )
 }
 
-const config = home.recentTransactions.row.badge;
+const config = home.recentTransactions.row.badge
 
 const styles = StyleSheet.create({
   badge: {
     paddingVertical: config.paddingVertical,
     paddingHorizontal: config.paddingHorizontal,
     borderRadius: config.borderRadius,
-    alignItems: 'center',
+    alignItems: "center",
   },
   badgeWithDot: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 4,
   },
   badgeCompleted: {
@@ -73,13 +73,13 @@ const styles = StyleSheet.create({
     backgroundColor: colors.state.errorLighter,
   },
   badgePending: {
-    backgroundColor: 'rgba(225, 102, 20, 0.10)',
+    backgroundColor: "rgba(225, 102, 20, 0.10)",
   },
   badgeText: {
     fontFamily: config.fontFamily,
     fontSize: config.fontSize,
     lineHeight: config.lineHeight,
-    textAlign: 'center',
+    textAlign: "center",
   },
   badgeTextCompleted: {
     color: config.textColor,
@@ -90,4 +90,4 @@ const styles = StyleSheet.create({
   badgeTextPending: {
     color: colors.state.warning,
   },
-});
+})
