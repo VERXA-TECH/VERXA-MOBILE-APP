@@ -4,6 +4,10 @@ import type {
   TransactionStatusType,
   TransactionWallet,
 } from '@/components/home/TransactionRow';
+import {
+  isDateInFilterRange,
+  resolveTransactionOccurredAt,
+} from '@/utils/formatDate';
 
 export type TransactionTypeFilter = 'all' | TransactionFilterType;
 
@@ -124,6 +128,14 @@ export function matchesTransactionFilters(
     const statusType = transaction.statusType ?? 'completed';
 
     if (statusType !== filters.status) {
+      return false;
+    }
+  }
+
+  if (filters.dateFrom || filters.dateTo) {
+    const occurredAt = resolveTransactionOccurredAt(transaction);
+
+    if (!occurredAt || !isDateInFilterRange(occurredAt, filters.dateFrom, filters.dateTo)) {
       return false;
     }
   }

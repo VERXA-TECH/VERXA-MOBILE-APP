@@ -10,8 +10,8 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 
 import CloseIcon from "../../../../assets/home/close-line.svg"
-import CalendarIcon from "../../../../assets/transactions/calendar-line.svg"
 import { Button } from "@/components/ui/Button"
+import { TransactionDateRangeField } from "@/components/transactions/filters/TransactionDateRangeField"
 import { FilterTag } from "@/components/transactions/filters/FilterTag"
 import {
   DEFAULT_TRANSACTION_FILTERS,
@@ -126,21 +126,13 @@ export function TransactionFilterSheet({
             </FilterSection>
 
             <FilterSection title="Date">
-              <Pressable
-                accessibilityRole="button"
-                style={styles.dateField}
-                onPress={() => {}}
-              >
-                <CalendarIcon
-                  width={config.date.iconSize}
-                  height={config.date.iconSize}
-                  color={colors.text.strong}
-                />
-                <Text style={styles.dateText}>
-                  From <Text style={styles.datePlaceholder}>YYYY-MM-DD</Text> to{" "}
-                  <Text style={styles.datePlaceholder}>YYYY-MM-DD</Text>
-                </Text>
-              </Pressable>
+              <TransactionDateRangeField
+                dateFrom={value.dateFrom}
+                dateTo={value.dateTo}
+                onChange={(dateFrom, dateTo) =>
+                  onChange({ ...value, dateFrom, dateTo })
+                }
+              />
             </FilterSection>
 
             <FilterSection title="Status">
@@ -225,20 +217,6 @@ const styles = StyleSheet.create({
     gap: config.tagsGap,
     alignSelf: "stretch",
   },
-  dateField: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: config.date.gap,
-    padding: config.date.padding,
-    borderRadius: config.date.borderRadius,
-    borderWidth: 1,
-    borderColor: config.date.borderColor,
-    backgroundColor: config.date.backgroundColor,
-    alignSelf: "stretch",
-    ...config.date.shadow,
-  },
-  dateText: config.date.text,
-  datePlaceholder: config.date.placeholder,
   walletIcon: {
     width: 16,
     height: 16,

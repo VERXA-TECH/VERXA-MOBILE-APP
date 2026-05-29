@@ -55,6 +55,8 @@ export type TransactionItem = {
   currency?: TransactionCurrency;
   filterType?: TransactionFilterType;
   wallet?: TransactionWallet;
+  /** ISO timestamp used for date-range filtering. */
+  occurredAt?: string;
 };
 
 type TransactionRowProps = {
