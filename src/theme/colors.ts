@@ -41,6 +41,7 @@ export const colors = {
   },
   state: {
     error: "#E93544",
+    errorLighter: "rgba(233, 53, 68, 0.10)",
     warning: "#E16614",
     success: "#1DAF61",
     successLighter: "rgba(31, 193, 107, 0.10)",

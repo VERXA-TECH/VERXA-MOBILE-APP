@@ -2,7 +2,7 @@ import { Stack } from 'expo-router';
 
 import { colors } from '@/theme';
 
-export default function AppLayout() {
+export default function TransactionLayout() {
   return (
     <Stack
       screenOptions={{
@@ -10,9 +10,8 @@ export default function AppLayout() {
         contentStyle: { backgroundColor: colors.background.app },
       }}
     >
-      <Stack.Screen name="(tabs)" />
-      <Stack.Screen name="transaction" options={{ presentation: 'card' }} />
-      <Stack.Screen name="wallet/[id]" options={{ presentation: 'card' }} />
+      <Stack.Screen name="index" />
+      <Stack.Screen name="[id]" options={{ presentation: 'card' }} />
     </Stack>
   );
 }
