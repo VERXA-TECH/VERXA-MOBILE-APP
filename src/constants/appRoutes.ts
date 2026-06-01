@@ -8,3 +8,7 @@ export const appRoutes = {
 export function transactionDetailRoute(id: string): Href {
   return `/transaction/${id}` as Href;
 }
+
+export function walletDetailRoute(id: string): Href {
+  return `/wallet/${id}` as Href;
+}
