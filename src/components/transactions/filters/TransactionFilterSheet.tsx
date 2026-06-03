@@ -1,4 +1,3 @@
-import { Image } from "expo-image"
 import {
   Modal,
   Pressable,
@@ -112,12 +111,6 @@ export function TransactionFilterSheet({
                     icon={
                       option.SvgIcon ? (
                         <option.SvgIcon width={16} height={16} />
-                      ) : option.image ? (
-                        <Image
-                          source={option.image}
-                          style={styles.walletIcon}
-                          contentFit="contain"
-                        />
                       ) : null
                     }
                   />
@@ -216,10 +209,6 @@ const styles = StyleSheet.create({
     alignContent: "flex-start",
     gap: config.tagsGap,
     alignSelf: "stretch",
-  },
-  walletIcon: {
-    width: 16,
-    height: 16,
   },
   applyButton: {
     alignSelf: "stretch",

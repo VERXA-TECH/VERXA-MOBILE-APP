@@ -1,16 +1,16 @@
-import { Image } from 'expo-image';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image } from "expo-image"
+import { Pressable, StyleSheet, Text, View } from "react-native"
 
-import type { WalletItem } from './mockWallets';
-import { wallets } from '@/theme';
+import type { WalletItem } from "./mockWallets"
+import { wallets } from "@/theme"
 
 type WalletCardProps = {
-  wallet: WalletItem;
-  onPress?: (wallet: WalletItem) => void;
-};
+  wallet: WalletItem
+  onPress?: (wallet: WalletItem) => void
+}
 
 export function WalletCard({ wallet, onPress }: WalletCardProps) {
-  const Icon = wallet.SvgIcon;
+  const Icon = wallet.SvgIcon
 
   return (
     <Pressable
@@ -37,26 +37,26 @@ export function WalletCard({ wallet, onPress }: WalletCardProps) {
 
       <Text style={styles.balance}>{wallet.balance}</Text>
     </Pressable>
-  );
+  )
 }
 
-const config = wallets.walletCard;
+const config = wallets.walletCard
 
 const styles = StyleSheet.create({
   card: {
-    flexDirection: 'row',
+    flexDirection: "row",
     padding: config.padding,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    alignSelf: 'stretch',
+    justifyContent: "space-between",
+    alignItems: "center",
+    alignSelf: "stretch",
     borderRadius: config.borderRadius,
     borderWidth: config.borderWidth,
     borderColor: config.borderColor,
     backgroundColor: config.backgroundColor,
   },
   left: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: config.contentGap,
     flexShrink: 1,
   },
@@ -72,4 +72,4 @@ const styles = StyleSheet.create({
   name: config.name,
   walletLabel: config.walletLabel,
   balance: config.balance,
-});
+})
